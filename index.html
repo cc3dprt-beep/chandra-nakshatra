@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedik Ay Burcu ve Nakşatra Analizi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Vedik Astroloji Ay Burcu Analizi</h1>
+            <p class="text-gray-600 mt-2">Ay Burcunuzu ve Nakşatranızın Derinliklerini Keşfedin</p>
+        </div>
+
+        <!-- YENİ GİRİŞ METNİ ALANI -->
+        <div class="mb-8 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+            <h2 class="font-bold text-lg text-indigo-800 mb-2">Karakterinizin Anahtarı: Vedik Astrolojide Ay Burcu</h2>
+            <p class="text-gray-700 text-sm">
+                Batı astrolojisinde "burcun ne?" diye sorulduğunda, cevap Güneş'in konumuna göredir. Oysa Vedik astroloji, ruhun ve zihnin en derin katmanlarına inmek için <strong>Ay'ı</strong> takip eder.
+            </p>
+            <p class="text-gray-700 text-sm mt-2">
+                Güneş kimliğinizi ve egonuzu temsil ederken, <strong>Ay sizin duygusal haritanızdır.</strong> Zihninizin nasıl çalıştığını, olaylara verdiğiniz içgüdüsel tepkileri, bilinçaltı kalıplarınızı ve gerçekte kim olduğunuzu o gösterir. Doğum anınızda Ay'ın içinde bulunduğu <strong>Nakşatra</strong> (takımyıldız) ise bu haritanın en ince detaylarını, adeta ruhunuzun parmak izini ortaya koyar.
+            </p>
+             <p class="text-gray-700 text-sm mt-2">
+                Bu yüzden Vedik sistemde Ay'ın konumu, karakter analizinde Güneş'ten çok daha kişisel ve isabetli kabul edilir. Gerçek potansiyelinizi ve duygusal ihtiyaçlarınızı keşfetmeye hazır mısınız?
+            </p>
+        </div>
+
+        <form id="astroForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- DOĞUM TARİHİ ALANI -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Doğum Tarihi</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <select id="birthDay" required class="form-select w-full bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 text-gray-800 appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            <option value="" disabled selected>Gün</option>
+                        </select>
+                        <select id="birthMonth" required class="form-select w-full bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 text-gray-800 appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            <option value="" disabled selected>Ay</option>
+                        </select>
+                        <select id="birthYear" required class="form-select w-full bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 text-gray-800 appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                            <option value="" disabled selected>Yıl</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- DOĞUM SAATİ ALANI -->
+                <div>
+                    <label for="birthTime" class="block text-sm font-medium text-gray-700 mb-2">Doğum Saati</label>
+                    <input type="time" id="birthTime" required class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                </div>
+            </div>
+            <div>
+                <label for="birthPlace" class="block text-sm font-medium text-gray-700 mb-2">Doğum Yeri</label>
+                <select id="birthPlace" required class="form-select w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-800 appearance-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+                    <option value="" disabled selected>Lütfen bir şehir seçin...</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                    Analizi Başlat
+                </button>
+            </div>
+        </form>
+
+        <!-- Results Area -->
+        <div id="results" class="mt-8 hidden">
+            <!-- Basic Results -->
+            <div class="p-6 bg-indigo-50 border border-indigo-200 rounded-lg text-center mb-6">
+                 <h2 class="text-2xl font-semibold text-indigo-800">Temel Astrolojik Bilgileriniz</h2>
+                 <p id="moonSignResult" class="text-xl mt-3 text-gray-700"></p>
+                 <p id="nakshatraResult" class="text-xl mt-1 text-gray-700"></p>
+            </div>
+            
+            <!-- Detailed Nakshatra Analysis -->
+            <div id="nakshatraAnalysis" class="space-y-4">
+                <h3 id="nakshatraTitle" class="text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600"></h3>
+                <p id="nakshatraEssence" class="text-center text-gray-500 italic"></p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-lg text-purple-700 mb-2">Kişilik ve Karakter</h4>
+                    <p id="nakshatraPersonality" class="text-gray-600"></p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-lg text-purple-700 mb-2">Sembolizm ve Mitoloji</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li id="nakshatraPlanet"></li>
+                        <li id="nakshatraSymbol"></li>
+                        <li id="nakshatraDeity"></li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-lg text-purple-700 mb-2">Hayatınızdaki Yansımaları</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li id="nakshatraStrengths"></li>
+                        <li id="nakshatraCautions"></li>
+                        <li id="nakshatraProfessions"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Console -->
+        <div id="errorConsole" class="mt-8 hidden">
+             <h3 class="text-lg font-semibold text-red-600 mb-2">Hata Konsolu</h3>
+             <div class="bg-red-50 p-4 rounded-lg font-mono text-sm text-red-700 whitespace-pre-wrap h-32 overflow-y-auto border border-red-200">
+                <p id="errorMessage"></p>
+             </div>
+        </div>
+
+        <!-- FOOTER ALANI -->
+        <div class="text-center mt-8 space-y-4">
+            <a href="https://www.instagram.com/venusirius_akademi?igsh=MTZ4YmU5MzF1c2xlNg==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-gray-500 hover:text-indigo-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.119 0-3.482.011-4.694.068-2.61.12-3.832 1.34-3.952 3.952-.057 1.212-.068 1.574-.068 4.694s.011 3.482.068 4.694c.12 2.61 1.34 3.832 3.952 3.952 1.213.057 1.575.068 4.694.068s3.482-.011 4.694-.068c2.61-.12 3.832-1.34 3.952-3.952.057-1.212.068-1.574.068-4.694s-.011-3.482-.068-4.694c-.12-2.61-1.34-3.832-3.952-3.952C15.482 3.614 15.119 3.604 12 3.604zm0 2.882c-2.827 0-5.131 2.304-5.131 5.131s2.304 5.131 5.131 5.131 5.131-2.304 5.131-5.131-2.304-5.131-5.131-5.131zm0 8.518c-1.873 0-3.387-1.514-3.387-3.387s1.514-3.387 3.387-3.387 3.387 1.514 3.387 3.387-1.514 3.387-3.387 3.387zm4.398-6.882c-.78 0-1.414.634-1.414 1.414s.634 1.414 1.414 1.414 1.414-.634 1.414-1.414-.634-1.414-1.414-1.414z"/></svg>
+                <span>@venusirius_akademi</span>
+            </a>
+            <p class="text-xs text-gray-400 italic">Bu uygulama yalnızca bilgilendirme amaçlıdır ve tüm hakları Venusirius Akademi'ye aittir. Hayatınızla ilgili önemli kararlar almadan önce lütfen profesyonel bir Vedik astrologa danışın.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DATA ---
+            const locations = {
+                "Türkiye": {
+                    "Adana": { lat: 37.0, lon: 35.32, tz: 3 }, "Adıyaman": { lat: 37.76, lon: 38.28, tz: 3 }, "Afyonkarahisar": { lat: 38.76, lon: 30.54, tz: 3 },
+                    "Ağrı": { lat: 39.72, lon: 43.05, tz: 3 }, "Amasya": { lat: 40.65, lon: 35.83, tz: 3 }, "Ankara": { lat: 39.93, lon: 32.85, tz: 3 },
+                    "Antalya": { lat: 36.89, lon: 30.71, tz: 3 }, "Artvin": { lat: 41.18, lon: 41.82, tz: 3 }, "Aydın": { lat: 37.84, lon: 27.84, tz: 3 },
+                    "Balıkesir": { lat: 39.65, lon: 27.89, tz: 3 }, "Bilecik": { lat: 40.14, lon: 29.98, tz: 3 }, "Bingöl": { lat: 38.88, lon: 40.5, tz: 3 },
+                    "Bitlis": { lat: 38.4, lon: 42.11, tz: 3 }, "Bolu": { lat: 40.73, lon: 31.61, tz: 3 }, "Burdur": { lat: 37.72, lon: 30.28, tz: 3 },
+                    "Bursa": { lat: 40.18, lon: 29.06, tz: 3 }, "Çanakkale": { lat: 40.15, lon: 26.41, tz: 3 }, "Çankırı": { lat: 40.6, lon: 33.61, tz: 3 },
+                    "Çorum": { lat: 40.55, lon: 34.95, tz: 3 }, "Denizli": { lat: 37.77, lon: 29.09, tz: 3 }, "Diyarbakır": { lat: 37.91, lon: 40.24, tz: 3 },
+                    "Edirne": { lat: 41.68, lon: 26.56, tz: 3 }, "Elazığ": { lat: 38.67, lon: 39.22, tz: 3 }, "Erzincan": { lat: 39.75, lon: 39.49, tz: 3 },
+                    "Erzurum": { lat: 39.9, lon: 41.27, tz: 3 }, "Eskişehir": { lat: 39.77, lon: 30.52, tz: 3 }, "Gaziantep": { lat: 37.07, lon: 37.38, tz: 3 },
+                    "Giresun": { lat: 40.91, lon: 38.39, tz: 3 }, "Gümüşhane": { lat: 40.46, lon: 39.48, tz: 3 }, "Hakkâri": { lat: 37.57, lon: 43.74, tz: 3 },
+                    "Hatay": { lat: 36.2, lon: 36.16, tz: 3 }, "Isparta": { lat: 37.76, lon: 30.55, tz: 3 }, "Mersin": { lat: 36.8, lon: 34.62, tz: 3 },
+                    "İstanbul": { lat: 41.01, lon: 28.98, tz: 3 }, "İzmir": { lat: 38.42, lon: 27.14, tz: 3 }, "Kars": { lat: 40.6, lon: 43.09, tz: 3 },
+                    "Kastamonu": { lat: 41.38, lon: 33.78, tz: 3 }, "Kayseri": { lat: 38.72, lon: 35.49, tz: 3 }, "Kırklareli": { lat: 41.73, lon: 27.22, tz: 3 },
+                    "Kırşehir": { lat: 39.15, lon: 34.16, tz: 3 }, "Kocaeli": { lat: 40.76, lon: 29.92, tz: 3 }, "Konya": { lat: 37.87, lon: 32.48, tz: 3 },
+                    "Kütahya": { lat: 39.42, lon: 29.98, tz: 3 }, "Malatya": { lat: 38.35, lon: 38.31, tz: 3 }, "Manisa": { lat: 38.61, lon: 27.42, tz: 3 },
+                    "Kahramanmaraş": { lat: 37.58, lon: 36.93, tz: 3 }, "Mardin": { lat: 37.31, lon: 40.73, tz: 3 }, "Muğla": { lat: 37.22, lon: 28.37, tz: 3 },
+                    "Muş": { lat: 38.73, lon: 41.49, tz: 3 }, "Nevşehir": { lat: 38.62, lon: 34.71, tz: 3 }, "Niğde": { lat: 37.97, lon: 34.68, tz: 3 },
+                    "Ordu": { lat: 40.98, lon: 37.88, tz: 3 }, "Rize": { lat: 41.02, lon: 40.52, tz: 3 }, "Sakarya": { lat: 40.77, lon: 30.4, tz: 3 },
+                    "Samsun": { lat: 41.28, lon: 36.33, tz: 3 }, "Siirt": { lat: 37.93, lon: 41.94, tz: 3 }, "Sinop": { lat: 42.03, lon: 35.15, tz: 3 },
+                    "Sivas": { lat: 39.75, lon: 37.01, tz: 3 }, "Tekirdağ": { lat: 40.98, lon: 27.51, tz: 3 }, "Tokat": { lat: 40.32, lon: 36.55, tz: 3 },
+                    "Trabzon": { lat: 41.0, lon: 39.72, tz: 3 }, "Tunceli": { lat: 39.1, lon: 39.54, tz: 3 }, "Şanlıurfa": { lat: 37.16, lon: 38.79, tz: 3 },
+                    "Uşak": { lat: 38.67, lon: 29.4, tz: 3 }, "Van": { lat: 38.5, lon: 43.37, tz: 3 }, "Yozgat": { lat: 39.82, lon: 34.8, tz: 3 },
+                    "Zonguldak": { lat: 41.46, lon: 31.79, tz: 3 }, "Aksaray": { lat: 38.37, lon: 34.03, tz: 3 }, "Bayburt": { lat: 40.26, lon: 40.22, tz: 3 },
+                    "Karaman": { lat: 37.18, lon: 33.22, tz: 3 }, "Kırıkkale": { lat: 39.85, lon: 33.51, tz: 3 }, "Batman": { lat: 37.88, lon: 41.13, tz: 3 },
+                    "Şırnak": { lat: 37.52, lon: 42.46, tz: 3 }, "Bartın": { lat: 41.63, lon: 32.34, tz: 3 }, "Ardahan": { lat: 41.11, lon: 42.7, tz: 3 },
+                    "Iğdır": { lat: 39.92, lon: 44.04, tz: 3 }, "Yalova": { lat: 40.65, lon: 29.27, tz: 3 }, "Karabük": { lat: 41.2, lon: 32.62, tz: 3 },
+                    "Kilis": { lat: 36.72, lon: 37.11, tz: 3 }, "Osmaniye": { lat: 37.07, lon: 36.25, tz: 3 }, "Düzce": { lat: 40.84, lon: 31.16, tz: 3 }
+                },
+                "Avrupa Başkentleri": {
+                    "Amsterdam": { lat: 52.37, lon: 4.89, tz: 2 }, "Atina": { lat: 37.98, lon: 23.73, tz: 3 }, "Berlin": { lat: 52.52, lon: 13.41, tz: 2 }, "Brüksel": { lat: 50.85, lon: 4.35, tz: 2 }, "Budapeşte": { lat: 47.5, lon: 19.04, tz: 2 }, "Kopenhag": { lat: 55.68, lon: 12.57, tz: 2 }, "Dublin": { lat: 53.35, lon: -6.26, tz: 1 }, "Helsinki": { lat: 60.17, lon: 24.94, tz: 3 }, "Kiev": { lat: 50.45, lon: 30.52, tz: 3 }, "Lizbon": { lat: 38.72, lon: -9.14, tz: 1 }, "Londra": { lat: 51.51, lon: -0.13, tz: 1 }, "Madrid": { lat: 40.42, lon: -3.7, tz: 2 }, "Moskova": { lat: 55.75, lon: 37.62, tz: 3 }, "Oslo": { lat: 59.91, lon: 10.75, tz: 2 }, "Paris": { lat: 48.85, lon: 2.35, tz: 2 }, "Prag": { lat: 50.08, lon: 14.42, tz: 2 }, "Roma": { lat: 41.9, lon: 12.5, tz: 2 }, "Stockholm": { lat: 59.33, lon: 18.07, tz: 2 }, "Viyana": { lat: 48.21, lon: 16.37, tz: 2 }, "Varşova": { lat: 52.23, lon: 21.01, tz: 2 }
+                },
+                "Asya Başkentleri": {
+                    "Bağdat": { lat: 33.34, lon: 44.39, tz: 3 }, "Bangkok": { lat: 13.75, lon: 100.5, tz: 7 }, "Pekin": { lat: 39.91, lon: 116.4, tz: 8 }, "Yeni Delhi": { lat: 28.61, lon: 77.21, tz: 5.5 }, "Cakarta": { lat: -6.21, lon: 106.85, tz: 7 }, "Kuala Lumpur": { lat: 3.14, lon: 101.7, tz: 8 }, "Manila": { lat: 14.6, lon: 120.98, tz: 8 }, "Riyad": { lat: 24.71, lon: 46.68, tz: 3 }, "Seul": { lat: 37.57, lon: 126.98, tz: 9 }, "Singapur": { lat: 1.35, lon: 103.82, tz: 8 }, "Tahran": { lat: 35.7, lon: 51.39, tz: 3.5 }, "Tokyo": { lat: 35.69, lon: 139.69, tz: 9 }
+                },
+                "ABD Şehirleri": {
+                    "New York": { lat: 40.71, lon: -74.01, tz: -4 }, "Los Angeles": { lat: 34.05, lon: -118.24, tz: -7 }, "Chicago": { lat: 41.88, lon: -87.63, tz: -5 }, "Houston": { lat: 29.76, lon: -95.36, tz: -5 }, "Phoenix": { lat: 33.45, lon: -112.07, tz: -7 }, "Philadelphia": { lat: 39.95, lon: -75.16, tz: -4 }, "San Antonio": { lat: 29.42, lon: -98.49, tz: -5 }, "San Diego": { lat: 32.72, lon: -117.16, tz: -7 }, "Dallas": { lat: 32.78, lon: -96.8, tz: -5 }, "San Francisco": { lat: 37.77, lon: -122.42, tz: -7 }, "Miami": { lat: 25.76, lon: -80.19, tz: -4 }, "Washington D.C.": { lat: 38.91, lon: -77.04, tz: -4 }
+                }
+            };
+            
+            const siderealZodiac = ["Koç", "Boğa", "İkizler", "Yengeç", "Aslan", "Başak", "Terazi", "Akrep", "Yay", "Oğlak", "Kova", "Balık"];
+            const nakshatras = ["Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"];
+
+            const nakshatraAnalyses = {
+                "Ashwini": { title: "Ashwini (At Başları)", essence: "Hızın, başlangıçların ve anlık şifanın nakşatrasıdır.", personality: "Son derece enerjik, hızlı düşünen ve anında harekete geçen kişilerdir. Maceracı bir ruhları vardır ve öncü olmayı severler. Gençlik dolu bir enerjiye sahiptirler ve genellikle yaşlarından daha genç görünürler.", symbolism: { planet: "Ketu", symbol: "Bir atın başı (hız, güç)", deity: "Ashwin Kardeşler (İlahi şifacılar)" }, life: { strengths: "Cesaret, hızlı eylem, gençlik enerjisi.", cautions: "Sabırsızlık, acelecilik, başladığı işi bitirmekte zorlanma.", professions: "Doktorlar, şifacılar, sporcular, kaşifler." } },
+                "Bharani": { title: "Bharani (Taşıyıcı)", essence: "Yaşam, ölüm ve dönüşümün nakşatrasıdır.", personality: "Güçlü bir iradeye ve büyük bir yaşam enerjisine sahiptirler. Hayatın hem yaratıcı hem de yıkıcı döngülerini anlarlar. Bazen aşırıya kaçma eğilimleri olabilir. Sevdiklerine karşı son derece koruyucudurlar.", symbolism: { planet: "Venüs", symbol: "Yoni (Dişil üreme organı, yaratıcılık)", deity: "Yama (Ölüm ve adalet tanrısı)" }, life: { strengths: "Yaratıcılık, kararlılık, sadakat.", cautions: "Kıskançlık, sabırsızlık, aşırıya kaçma.", professions: "Sanatçılar, jinekologlar, ebeler, cenaze işleri." } },
+                "Krittika": { title: "Krittika (Kesici)", essence: "Arınmanın, ateşin ve keskinliğin nakşatrasıdır.", personality: "Ateşli, tutkulu ve hırslı bir doğaları vardır. Keskin bir zekaya ve eleştirel bir bakış açısına sahiptirler. Koruyucu ve besleyici bir yanları da vardır. Liderlik özellikleri belirgindir.", symbolism: { planet: "Güneş", symbol: "Bıçak veya jilet (keskinlik, arındırma)", deity: "Agni (Ateş tanrısı)" }, life: { strengths: "Liderlik, dürüstlük, hırs, koruyuculuk.", cautions: "Öfke, inatçılık, aşırı eleştirellik.", professions: "Askerler, yöneticiler, eleştirmenler, avukatlar." } },
+                "Rohini": { title: "Rohini (Kırmızı Olan)", essence: "Büyüme, bereket ve çekiciliğin nakşatrasıdır.", personality: "Çekici, sanatsal ve estetiğe düşkün kişilerdir. Materyalist bir yanları olabilir ve konforu severler. Genellikle dengeli, nazik ve sadıktırlar. Aile ve toplum değerlerine önem verirler.", symbolism: { planet: "Ay", symbol: "Araba veya tapınak (ilerleme, medeniyet)", deity: "Brahma (Yaratıcı tanrı)" }, life: { strengths: "Çekicilik, yaratıcılık, istikrar.", cautions: "Materyalizm, kıskançlık, kararsızlık.", professions: "Sanatçılar, çiftçiler, moda tasarımcıları, bankacılar." } },
+                "Mrigashira": { title: "Mrigashira (Geyik Başı)", essence: "Arayışın, merakın ve hassasiyetin nakşatrasıdır.", personality: "Nazik, meraklı ve sürekli bir arayış içinde olan bir yapıları vardır. Entelektüel ve araştırmacıdırlar. Ancak huzursuz ve kararsız olabilirler. Güzelliğe ve doğaya düşkündürler.", symbolism: { planet: "Mars", symbol: "Geyik başı (hassasiyet, arayış)", deity: "Soma (Ay tanrısı, nektar)" }, life: { strengths: "Merak, entelektüel kapasite, naziklik.", cautions: "Kararsızlık, huzursuzluk, şüphecilik.", professions: "Yazarlar, araştırmacılar, seyahat acenteleri, öğretmenler." } },
+                "Ardra": { title: "Ardra (Nemli Olan)", essence: "Fırtınanın, dönüşümün ve gözyaşının nakşatrasıdır.", personality: "Yoğun ve tutkulu bir doğaları vardır. Hayatlarında büyük dönüşümler ve zorluklar yaşayabilirler, ancak bu onları güçlendirir. Empati yetenekleri çok gelişmiştir. Eski ve işe yaramayanı yıkıp yeniyi kurma gücüne sahiptirler.", symbolism: { planet: "Rahu", symbol: "Gözyaşı damlası (arınma, fırtına sonrası ferahlık)", deity: "Rudra (Fırtına ve yıkım tanrısı)" }, life: { strengths: "Empati, derin analiz yeteneği, dayanıklılık.", cautions: "Yıkıcılık, melankoli, kafa karışıklığı.", professions: "Araştırmacılar, elektrik mühendisleri, psikologlar." } },
+                "Punarvasu": { title: "Punarvasu (Işığa Dönüş)", essence: "Yenilenmenin, geri dönüşün ve bolluğun nakşatrasıdır.", personality: "İyimser, felsefi ve manevi bir yapıları vardır. Hayatta kaybettikleri şeyleri geri kazanma potansiyeline sahiptirler. Özgürlüklerine düşkündürler ve seyahat etmeyi severler. Basit ve sade bir yaşamı tercih ederler.", symbolism: { planet: "Jüpiter", symbol: "Ok ve yay", deity: "Aditi (Tanrıların annesi, sonsuzluk)" }, life: { strengths: "İyimserlik, maneviyat, yenilenme gücü.", cautions: "Kararsızlık, istikrarsızlık.", professions: "Öğretmenler, yazarlar, din adamları, filozoflar." } },
+                "Pushya": { title: "Pushya (Besleyici)", essence: "Beslemenin, maneviyatın ve refahın nakşatrasıdır.", personality: "En uğurlu nakşatralardan biridir. Son derece besleyici, yardımsever ve cömerttirler. Ailelerine ve sevdiklerine çok bağlıdırlar. Sezgisel ve bilgedirler. Manevi bir derinlikleri vardır.", symbolism: { planet: "Satürn", symbol: "İnek memesi (besleme, bereket) veya çiçek", deity: "Brihaspati (Tanrıların öğretmeni, bilgelik)" }, life: { strengths: "Cömertlik, bilgelik, maneviyat, yardımseverlik.", cautions: "Kibir, inatçılık, aşırı bağımlılık.", professions: "Danışmanlar, öğretmenler, politikacılar, din adamları." } },
+                "Ashlesha": { title: "Ashlesha (Sarılan)", essence: "Sarmaşığın, sezginin ve gizemin nakşatrasıdır.", personality: "Yılan sembolizmi nedeniyle gizemli, sezgisel ve hipnotik bir doğaları vardır. Keskin bir zekaya sahiptirler ve stratejik düşünürler. Bazen manipülatif ve kontrolcü olabilirler. Derin psikolojik içgörüleri vardır.", symbolism: { planet: "Merkür", symbol: "Şifacı yılan", deity: "Nagalar (Yılan tanrılar)" }, life: { strengths: "Sezgi, psikolojik derinlik, bilgelik.", cautions: "Manipülasyon, kıskançlık, ketumluk.", professions: "Psikologlar, astrologlar, politikacılar, iş insanları." } },
+                "Magha": { title: "Magha (Görkemli)", essence: "Kraliyetin, ataların ve gücün nakşatrasıdır.", personality: "Doğuştan liderdirler ve otoriteye sahiptirler. Atalarına ve geleneklere derinden bağlıdırlar. Cömert ve onurlu bir yapıları vardır. Ancak ego ve kibir eğilimleri olabilir. Büyük hedefleri vardır.", symbolism: { planet: "Ketu", symbol: "Taht odası (otorite, statü)", deity: "Pitriler (Ataların ruhları)" }, life: { strengths: "Liderlik, cömertlik, geleneklere bağlılık.", cautions: "Ego, kibir, materyalizme düşkünlük.", professions: "Yöneticiler, politikacılar, avukatlar, tarihçiler." } },
+                "Purva Phalguni": { title: "Purva Phalguni (Erken İncir Ağacı)", essence: "Rahatlamanın, keyfin ve yaratıcılığın nakşatrasıdır.", personality: "Sosyal, sanatsal ve keyiflerine düşkün kişilerdir. İlişkiler ve ortaklıklar onlar için önemlidir. Çekici ve popülerdirler. Tembellik ve erteleme eğilimleri olabilir.", symbolism: { planet: "Venüs", symbol: "Hamak veya yatağın ön ayakları (dinlenme)", deity: "Bhaga (Evlilik ve refah tanrısı)" }, life: { strengths: "Sosyallik, yaratıcılık, çekicilik.", cautions: "Tembellik, kibir, yüzeysellik.", professions: "Sanatçılar, müzisyenler, aktörler, güzellik uzmanları." } },
+                "Uttara Phalguni": { title: "Uttara Phalguni (Geç İncir Ağacı)", essence: "Dostluğun, yardımseverliğin ve asaletin nakşatrasıdır.", personality: "Yardımsever, cömert ve güvenilir kişilerdir. Arkadaşlık ve ortaklıklara çok değer verirler. Genellikle istikrarlı ve başarılı olurlar. Tek başlarına olmaktan çok ekip çalışmasını severler.", symbolism: { planet: "Güneş", symbol: "Yatağın arka ayakları veya küçük yatak", deity: "Aryaman (Misafirperverlik ve dostluk tanrısı)" }, life: { strengths: "Yardımseverlik, güvenilirlik, sosyallik.", cautions: "Sabırsızlık, bağımlılık, aşırı cömertlik.", professions: "Danışmanlar, sosyal hizmet uzmanları, yöneticiler." } },
+                "Hasta": { title: "Hasta (El)", essence: "Becerinin, zanaatın ve zekanın nakşatrasıdır.", personality: "El becerileri çok gelişmiştir ve zanaatkarlıkta ustadırlar. Pratik zekaları ve mizah anlayışları vardır. Detaylara dikkat ederler ve düzenlidirler. Bazen endişeli ve güvensiz olabilirler.", symbolism: { planet: "Ay", symbol: "Altın el", deity: "Savitar (Güneş tanrısı, ilham veren)" }, life: { strengths: "El becerisi, zeka, mizah, pratiklik.", cautions: "Endişe, stres, mükemmeliyetçilik.", professions: "Zanaatkarlar, sanatçılar, cerrahlar, komedyenler." } },
+                "Chitra": { title: "Chitra (Parlak Mücevher)", essence: "Mimarinin, güzelliğin ve yanılsamanın nakşatrasıdır.", personality: "Karizmatik, zarif ve sanatsal kişilerdir. Güzellik ve estetik onlar için çok önemlidir. Yeni şeyler tasarlama ve yaratma yetenekleri vardır. Bazen egoist ve yüzeysel görünebilirler.", symbolism: { planet: "Mars", symbol: "Parlak mücevher veya inci", deity: "Vishwakarma (İlahi mimar ve zanaatkar)" }, life: { strengths: "Karizma, yaratıcılık, estetik anlayış.", cautions: "Ego, yüzeysellik, kendini beğenmişlik.", professions: "Mimarlar, tasarımcılar, sanatçılar, fotoğrafçılar." } },
+                "Swati": { title: "Swati (Kılıç veya Bağımsız Olan)", essence: "Bağımsızlığın, rüzgarın ve öğrenmenin nakşatrasıdır.", personality: "Son derece bağımsız ve özgür ruhludurlar. Diplomatik ve adaletlidirler. Öğrenmeye ve kendini geliştirmeye açıktırlar. Kararsızlık ve huzursuzluk yaşayabilirler.", symbolism: { planet: "Rahu", symbol: "Filizlenen genç bir bitki (büyüme)", deity: "Vayu (Rüzgar tanrısı)" }, life: { strengths: "Bağımsızlık, diplomasi, öğrenme arzusu.", cautions: "Kararsızlık, huzursuzluk, erteleme.", professions: "İş insanları, diplomatlar, avukatlar, eğitimciler." } },
+                "Vishakha": { title: "Vishakha (Dallanmış Olan)", essence: "Hedefin, kararlılığın ve tutkunun nakşatrasıdır.", personality: "Hedef odaklı, hırslı ve kararlı bir yapıları vardır. Hayatta tek bir amaca odaklanabilirler. Tutkulu ve yoğun duygulara sahiptirler. Bazen kıskanç ve sahiplenici olabilirler.", symbolism: { planet: "Jüpiter", symbol: "Zafer takı veya çömlekçi çarkı", deity: "Indra (Tanrıların kralı) ve Agni (Ateş tanrısı)" }, life: { strengths: "Kararlılık, odaklanma, hırs, tutku.", cautions: "Kıskançlık, öfke, takıntı.", professions: "Politikacılar, askerler, araştırmacılar, liderler." } },
+                "Anuradha": { title: "Anuradha (Başarıyı Takip Eden)", essence: "Adanmışlığın, dostluğun ve maneviyatın nakşatrasıdır.", personality: "Sevgi dolu, sadık ve adanmış kişilerdir. Arkadaşlık ve grup çalışmalarında çok başarılıdırlar. Sezgileri güçlüdür ve manevi bir derinlikleri vardır. Sayılarla ve mantıkla araları iyidir.", symbolism: { planet: "Satürn", symbol: "Lotus çiçeği (saflık, aydınlanma) veya zafer takı", deity: "Mitra (Dostluk ve ortaklık tanrısı)" }, life: { strengths: "Sadakat, sezgi, dostluk, organizasyon yeteneği.", cautions: "Melankoli, kıskançlık, kontrolcülük.", professions: "Danışmanlar, astrologlar, grup liderleri, organizatörler." } },
+                "Jyeshtha": { title: "Jyeshtha (En Büyük, En Yaşlı)", essence: "Otoritenin, bilgeliğin ve kıdemin nakşatrasıdır.", personality: "Doğuştan bir bilgelik ve otoriteye sahiptirler. Ailenin veya grubun lideri olma eğilimindedirler. Koruyucu ve sorumluluk sahibidirler. Bazen kibirli ve kontrolcü olabilirler. Gizemli bir havaları vardır.", symbolism: { planet: "Merkür", symbol: "Şemsiye", deity: "Indra (Tanrıların kralı, güç)" }, life: { strengths: "Liderlik, bilgelik, sorumluluk.", cautions: "Kibir, kontrolcülük, kıskançlık.", professions: "Yöneticiler, askerler, polisler, aile büyükleri." } },
+                "Mula": { title: "Mula (Kök)", essence: "Köklerin, gerçeğin ve dönüşümün nakşatrasıdır.", personality: "Doğuştan araştırmacıdır. Yüzeysellikten hoşlanmaz, her konunun kökenine ve en derinine inmek isterler. Genellikle çok dürüst, direkt ve felsefi bir yapıları vardır. Eski ve işe yaramayanı yıkma gücüne sahiptirler.", symbolism: { planet: "Ketu", symbol: "Birbirine bağlanmış bir demet kök", deity: "Nirriti (Yıkım ve dönüşüm tanrıçası)" }, life: { strengths: "Güçlü sezgiler, dürüstlük, dayanıklılık.", cautions: "Kibir, huzursuzluk, yıkıcılık.", professions: "Dedektifler, bilim insanları, cerrahlar, astrologlar." } },
+                "Purva Ashadha": { title: "Purva Ashadha (Erken Zafer)", essence: "Yenilmezliğin, popülerliğin ve arınmanın nakşatrasıdır.", personality: "İyimser, felsefi ve maceracı bir ruhları vardır. Popüler ve sevilen kişilerdir. Zafer kazanma ve hedeflerine ulaşma konusunda hırslıdırlar. Bağımsızlıklarına düşkündürler.", symbolism: { planet: "Venüs", symbol: "Yelpaze veya elek (arınma)", deity: "Apas (Su tanrıçası)" }, life: { strengths: "İyimserlik, popülerlik, ikna kabiliyeti.", cautions: "Kibir, sabırsızlık, inatçılık.", professions: "Sanatçılar, konuşmacılar, denizciler, liderler." } },
+                "Uttara Ashadha": { title: "Uttara Ashadha (Geç Zafer)", essence: "Kalıcı zaferin, dürüstlüğün ve bilgeliğin nakşatrasıdır.", personality: "Sorumluluk sahibi, dürüst ve asil bir yapıları vardır. Başladıkları işi bitirirler ve kalıcı başarılar elde ederler. Sabırlı ve disiplinlidirler. Manevi bir derinlikleri vardır.", symbolism: { planet: "Güneş", symbol: "Fil dişi veya küçük yatak", deity: "Vishvedevas (Evrensel tanrılar)" }, life: { strengths: "Dürüstlük, sorumluluk, disiplin, bilgelik.", cautions: "Yalnızlık hissi, inatçılık, aşırı ciddiyet.", professions: "Liderler, danışmanlar, avukatlar, din adamları." } },
+                "Shravana": { title: "Shravana (Dinleyen)", essence: "Dinlemenin, öğrenmenin ve bilgeliğin nakşatrasıdır.", personality: "İyi bir dinleyici ve öğrenicidirler. Geleneksel bilgeliğe ve eğitime önem verirler. Genellikle bilgili ve saygın kişiler olurlar. Seyahat etmeyi ve yeni şeyler öğrenmeyi severler.", symbolism: { planet: "Ay", symbol: "Kulak veya üç ayak izi", deity: "Vishnu (Koruyucu tanrı)" }, life: { strengths: "Öğrenme yeteneği, bilgelik, iyi bir dinleyici olma.", cautions: "Hassasiyet, kararsızlık, dedikoduya yatkınlık.", professions: "Öğretmenler, dilbilimciler, danışmanlar, öğrenciler." } },
+                "Dhanishta": { title: "Dhanishta (En Zengin)", essence: "Zenginliğin, ritmin ve şöhretin nakşatrasıdır.", personality: "Müzik ve ritim duyguları çok gelişmiştir. Sosyal ve enerjiktirler. Zenginlik ve şöhret potansiyelleri vardır. Bazen materyalist ve egoist olabilirler. Grup çalışmalarında başarılıdırlar.", symbolism: { planet: "Mars", symbol: "Davul veya flüt (ritim)", deity: "Vasus (Sekiz element tanrısı)" }, life: { strengths: "Müzik yeteneği, zenginlik potansiyeli, sosyallik.", cautions: "Ego, materyalizm, acelecilik.", professions: "Müzisyenler, dansçılar, astrologlar, cerrahlar." } },
+                "Shatabhisha": { title: "Shatabhisha (Yüz Şifacı)", essence: "Şifanın, gizemin ve yalnızlığın nakşatrasıdır.", personality: "Gizemli, felsefi ve yalnızlığı seven bir yapıları vardır. Güçlü bir şifa yetenekleri vardır. Gerçeği ararlar ve yanılsamaların ötesini görme eğilimindedirler. Bazen mesafeli ve depresif olabilirler.", symbolism: { planet: "Rahu", symbol: "Boş bir daire (sınırsızlık, evren)", deity: "Varuna (Gökyüzü ve okyanus tanrısı)" }, life: { strengths: "Şifa yeteneği, sezgi, felsefi derinlik.", cautions: "Mesafe, depresyon, ketumluk.", professions: "Şifacılar, astrologlar, bilim insanları, araştırmacılar." } },
+                "Purva Bhadrapada": { title: "Purva Bhadrapada (Önceki Şanslı Ayak)", essence: "Ateşli tutkunun, dönüşümün ve kefaretin nakşatrasıdır.", personality: "Yoğun, tutkulu ve idealist bir yapıları vardır. İki yüzlü bir doğaları olabilir; bir yandan nazik, diğer yandan sert. Hayatlarında büyük dönüşümler yaşayabilirler. Konuşma yetenekleri güçlüdür.", symbolism: { planet: "Jüpiter", symbol: "Kılıç", deity: "Aja Ekapada (Tek ayaklı keçi, ateşli bir tanrı)" }, life: { strengths: "Tutku, idealizm, konuşma yeteneği.", cautions: "Öfke, karamsarlık, sinirlilik.", professions: "Konuşmacılar, astrologlar, cenaze işleri, radikal liderler." } },
+                "Uttara Bhadrapada": { title: "Uttara Bhadrapada (Sonraki Şanslı Ayak)", essence: "Bilgeliğin, fedakarlığın ve manevi derinliğin nakşatrasıdır.", personality: "Son derece bilge, sabırlı ve kontrollü kişilerdir. Fedakar ve yardımseverdirler. Manevi bir derinlikleri vardır ve evrenin sırlarını anlama potansiyeline sahiptirler. Öfkelerini kontrol edebilirler.", symbolism: { planet: "Satürn", symbol: "Su ejderhası", deity: "Ahir Budhnya (Derinliklerin yılanı)" }, life: { strengths: "Bilgelik, sabır, fedakarlık, maneviyat.", cautions: "Tembellik, izolasyon, kararsızlık.", professions: "Danışmanlar, yogiler, din adamları, hayırseverler." } },
+                "Revati": { title: "Revati (Zengin Olan)", essence: "Beslemenin, korumanın ve sonların nakşatrasıdır.", personality: "Son derece şefkatli, besleyici ve hayvansever kişilerdir. Başkalarına yol göstermeyi ve onları korumayı severler. Sezgileri çok güçlüdür. Zodyak'ın son nakşatrası olduğu için bir döngüyü tamamlama ve yeniye başlama enerjisi taşır.", symbolism: { planet: "Merkür", symbol: "Balık (manevi yolculuk) veya davul", deity: "Pushan (Koruyucu ve yol gösterici tanrı)" }, life: { strengths: "Şefkat, sezgi, hayvan sevgisi, cömertlik.", cautions: "Aşırı hassasiyet, bağımlılık, kendine güvensizlik.", professions: "Veterinerler, sanatçılar, sosyal hizmet uzmanları, bakıcılar." } }
+            };
+
+            // --- UI SETUP ---
+            const birthDaySelect = document.getElementById('birthDay');
+            const birthMonthSelect = document.getElementById('birthMonth');
+            const birthYearSelect = document.getElementById('birthYear');
+            const birthPlaceSelect = document.getElementById('birthPlace');
+            const form = document.getElementById('astroForm');
+            const resultsDiv = document.getElementById('results');
+            const errorConsoleDiv = document.getElementById('errorConsole');
+            const moonSignResultP = document.getElementById('moonSignResult');
+            const nakshatraResultP = document.getElementById('nakshatraResult');
+            const errorMessageP = document.getElementById('errorMessage');
+
+            // DİNAMİK OLARAK TARİH SEÇENEKLERİNİ DOLDURMA
+            function populateDateDropdowns() {
+                // Günler
+                for (let i = 1; i <= 31; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i;
+                    birthDaySelect.appendChild(option);
+                }
+                // Aylar
+                const months = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+                for (let i = 0; i < months.length; i++) {
+                    const option = document.createElement('option');
+                    option.value = i + 1;
+                    option.textContent = months[i];
+                    birthMonthSelect.appendChild(option);
+                }
+                // Yıllar
+                const currentYear = new Date().getFullYear();
+                const startYear = 1940;
+                for (let i = currentYear; i >= startYear; i--) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = i;
+                    birthYearSelect.appendChild(option);
+                }
+            }
+            
+            populateDateDropdowns();
+
+
+            // Populate the location dropdown
+            for (const group in locations) {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = group;
+                for (const city in locations[group]) {
+                    const option = document.createElement('option');
+                    option.value = `${group}|${city}`;
+                    option.textContent = city;
+                    optgroup.appendChild(option);
+                }
+                birthPlaceSelect.appendChild(optgroup);
+            }
+            
+            // --- EVENT LISTENER ---
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                clearMessages();
+
+                try {
+                    // YENİ TARİH ALMA YÖNTEMİ
+                    const day = birthDaySelect.value;
+                    const month = birthMonthSelect.value;
+                    const year = birthYearSelect.value;
+                    const birthTime = document.getElementById('birthTime').value;
+                    const birthPlaceValue = document.getElementById('birthPlace').value;
+
+                    if (!day || !month || !year || !birthTime || !birthPlaceValue) {
+                        throw new Error("Lütfen tüm alanları (tarih, saat ve yer) doldurun.");
+                    }
+                    
+                    // Tarih string'ini YYYY-MM-DD formatında birleştirme
+                    const birthDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+                    const [group, city] = birthPlaceValue.split('|');
+                    const locationData = locations[group][city];
+                    
+                    const result = calculateVedicMoon(birthDate, birthTime, locationData);
+                    displayResults(result.sign, result.nakshatra);
+
+                } catch (error) {
+                    displayError(error.message);
+                }
+            });
+
+            // --- CORE CALCULATION LOGIC ---
+            function calculateVedicMoon(dateStr, timeStr, location) {
+                const localBirthDate = new Date(`${dateStr}T${timeStr}`);
+                if (isNaN(localBirthDate.getTime())) throw new Error("Geçersiz tarih veya saat formatı. Lütfen geçerli bir gün seçin (örn: 30 Şubat geçersizdir).");
+
+                const utcTimestamp = localBirthDate.getTime() - (location.tz * 3600 * 1000);
+                const utcBirthDate = new Date(utcTimestamp);
+                
+                const year = utcBirthDate.getUTCFullYear();
+                let month = utcBirthDate.getUTCMonth() + 1;
+                const day = utcBirthDate.getUTCDate() + (utcBirthDate.getUTCHours() / 24) + (utcBirthDate.getUTCMinutes() / 1440) + (utcBirthDate.getUTCSeconds() / 86400);
+                
+                let adjYear = year;
+                if (month <= 2) {
+                    adjYear -= 1;
+                    month += 12;
+                }
+                const A = Math.floor(adjYear / 100);
+                const B = 2 - A + Math.floor(A / 4);
+                const JD = Math.floor(365.25 * (adjYear + 4716)) + Math.floor(30.6001 * (month + 1)) + day + B - 1524.5;
+                
+                const T = (JD - 2451545.0) / 36525;
+                const moonMeanLongitude = 218.3164477 + 481267.88123421 * T;
+                const moonMeanAnomaly = 134.9633964 + 477198.8675055 * T;
+                const moonLongitude = moonMeanLongitude + 6.289 * Math.sin(moonMeanAnomaly * Math.PI/180);
+                
+                const ayanamsha = 24.14472222 + (0.0000222222 * (JD - 2451545.0)); // Lahiri Ayanamsha
+                let siderealLongitude = (moonLongitude - ayanamsha) % 360;
+                if (siderealLongitude < 0) siderealLongitude += 360;
+
+                const signIndex = Math.floor(siderealLongitude / 30);
+                const nakshatraIndex = Math.floor(siderealLongitude / (13 + 20/60));
+
+                return {
+                    sign: siderealZodiac[signIndex],
+                    nakshatra: nakshatras[nakshatraIndex]
+                };
+            }
+
+            // --- HELPER FUNCTIONS ---
+            function displayResults(sign, nakshatra) {
+                // Display basic info
+                moonSignResultP.textContent = `Vedik Ay Burcunuz: ${sign}`;
+                nakshatraResultP.textContent = `Ay Nakşatranız: ${nakshatra}`;
+                
+                // Display detailed analysis
+                const analysis = nakshatraAnalyses[nakshatra];
+                if(analysis) {
+                    document.getElementById('nakshatraTitle').textContent = analysis.title;
+                    document.getElementById('nakshatraEssence').textContent = analysis.essence;
+                    document.getElementById('nakshatraPersonality').textContent = analysis.personality;
+                    document.getElementById('nakshatraPlanet').innerHTML = `<strong>Yönetici Gezegen:</strong> ${analysis.symbolism.planet}`;
+                    document.getElementById('nakshatraSymbol').innerHTML = `<strong>Sembolü:</strong> ${analysis.symbolism.symbol}`;
+                    document.getElementById('nakshatraDeity').innerHTML = `<strong>Yönetici Tanrısı:</strong> ${analysis.symbolism.deity}`;
+                    document.getElementById('nakshatraStrengths').innerHTML = `<strong>Güçlü Yönler:</strong> ${analysis.life.strengths}`;
+                    document.getElementById('nakshatraCautions').innerHTML = `<strong>Dikkat Edilmesi Gerekenler:</strong> ${analysis.life.cautions}`;
+                    document.getElementById('nakshatraProfessions').innerHTML = `<strong>Uygun Meslekler:</strong> ${analysis.life.professions}`;
+                }
+
+                resultsDiv.classList.remove('hidden');
+            }
+
+            function displayError(message) {
+                errorMessageP.textContent = `[${new Date().toLocaleTimeString()}] HATA: ${message}`;
+                errorConsoleDiv.classList.remove('hidden');
+            }
+
+            function clearMessages() {
+                resultsDiv.classList.add('hidden');
+                errorConsoleDiv.classList.add('hidden');
+                errorMessageP.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
